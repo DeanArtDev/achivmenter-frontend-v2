@@ -1,3 +1,4 @@
-import "../main";
+import "main";
+import "style.scss"
 
 console.log("Hello world");

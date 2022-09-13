@@ -1,6 +1,6 @@
-import webpack from "webpack";
+import {ResolveOptions} from "webpack";
 
-const buildResolve = (): webpack.ResolveOptions => {
+const buildResolve = (): ResolveOptions => {
   return {
     extensions: [".tsx", ".ts", ".js"],
     preferAbsolute: true,

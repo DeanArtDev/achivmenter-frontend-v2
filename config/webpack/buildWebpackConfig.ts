@@ -1,11 +1,11 @@
 import {WebpackBuildOptions} from "./types";
-import webpack from "webpack";
+import {Configuration} from "webpack";
 import buildDevServer from "./buildDevServer";
 import buildRules from "./buildRules";
 import buildResolve from "./buildResolve";
 import buildPlugins from "./buildPlugins";
 
-const buildWebpackConfig = (options: WebpackBuildOptions): webpack.Configuration => {
+const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
   return {
     mode: options.mode,
     entry: options.paths.entry,

@@ -3,10 +3,10 @@ import webpack from "webpack";
 import {WebpackBuildOptions, WebpackEnv} from "./config/webpack/types";
 import buildWebpackConfig from "./config/webpack/buildWebpackConfig";
 
-module.exports = (env: WebpackEnv): webpack.Configuration => {
+module.exports = ({ mode }: WebpackEnv): webpack.Configuration => {
   const options: WebpackBuildOptions = {
-    mode: env.mode || "development",
-    isDev: env.mode === "development",
+    mode: mode || "development",
+    isDev: mode === "development",
     port: 3000,
     paths: {
       src: path.resolve(__dirname, "src"),
