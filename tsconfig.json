@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src*"],
+    },
+    "strict": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictBindCallApply": false,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": false,
+
+    "noUnusedLocals": false ,
+    "noUnusedParameters": false ,
+    "noFallthroughCasesInSwitch": true ,
+    "noUncheckedIndexedAccess": true ,
+    "noImplicitOverride": true ,
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "./node_modules",
+    "./build",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
