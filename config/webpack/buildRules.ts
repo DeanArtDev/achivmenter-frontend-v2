@@ -19,14 +19,11 @@ const buildLoaders = ({ isDev }: WebpackBuildOptions): RuleSetRule[] => {
           sourceMap: isDev,
           modules: {
             auto: (resourcePath: string) => resourcePath.includes('.module.'),
-            localIdentName: '[name]--[hash:base64:3]',
+            localIdentName: '[local]--[hash:base64:3]',
           },
         },
       },
-      {
-        loader: 'sass-loader',
-        options: { sourceMap: isDev },
-      },
+      { loader: 'sass-loader', options: { sourceMap: isDev } },
     ],
   };
 

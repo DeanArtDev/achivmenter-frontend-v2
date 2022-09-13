@@ -6,10 +6,7 @@ const buildDevServer = ({ paths, port }: WebpackBuildOptions): DevServerConfigur
     port: port,
     open: true,
     client: {
-      overlay: {
-        errors: true,
-        warnings: false,
-      },
+      overlay: { errors: true, warnings: false },
       progress: true,
     },
     static: { directory: paths.static },
