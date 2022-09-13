@@ -3,7 +3,8 @@ import {WebpackBuildOptions} from "./types";
 
 const buildDevServer = ({ paths, port }: WebpackBuildOptions): DevServerConfiguration => {
   return {
-    open: false,
+    port: port,
+    open: true,
     client: {
       overlay: {
         errors: true,
@@ -12,7 +13,6 @@ const buildDevServer = ({ paths, port }: WebpackBuildOptions): DevServerConfigur
       progress: true,
     },
     static: { directory: paths.static },
-    port: port,
     historyApiFallback: true
   }
 }

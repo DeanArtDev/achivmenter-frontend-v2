@@ -15,10 +15,11 @@ const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
       clean: true,
     },
     devServer: options.isDev ? buildDevServer(options) : undefined,
+    devtool: options.isDev ? 'inline-source-map' : undefined,
     module: {
       rules: buildRules(options),
     },
-    resolve: buildResolve(),
+    resolve: buildResolve(options),
     plugins: buildPlugins(options),
   }
 }
