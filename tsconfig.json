@@ -12,7 +12,7 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"],
+      "*": ["./src/*"]
     },
     "strict": true,
     "strictNullChecks": false,
@@ -21,19 +21,14 @@
     "strictPropertyInitialization": false,
     "noImplicitThis": false,
 
-    "noUnusedLocals": false ,
-    "noUnusedParameters": false ,
-    "noFallthroughCasesInSwitch": true ,
-    "noUncheckedIndexedAccess": true ,
-    "noImplicitOverride": true ,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": [
-    "./node_modules",
-    "./build",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx"
-  ],
+  "exclude": ["./node_modules", "./build", "src/**/*.test.ts", "src/**/*.test.tsx"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

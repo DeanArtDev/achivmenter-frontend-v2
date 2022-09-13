@@ -1,9 +1,9 @@
-import {WebpackBuildOptions} from "./types";
-import {Configuration} from "webpack";
-import buildDevServer from "./buildDevServer";
-import buildRules from "./buildRules";
-import buildResolve from "./buildResolve";
-import buildPlugins from "./buildPlugins";
+import { WebpackBuildOptions } from './types';
+import { Configuration } from 'webpack';
+import buildDevServer from './buildDevServer';
+import buildRules from './buildRules';
+import buildResolve from './buildResolve';
+import buildPlugins from './buildPlugins';
 
 const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
   return {
@@ -11,7 +11,7 @@ const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
     entry: options.paths.entry,
     output: {
       path: options.paths.output,
-      filename: "[name].[contenthash].bundle.js",
+      filename: '[name].[contenthash].bundle.js',
       clean: true,
     },
     devServer: options.isDev ? buildDevServer(options) : undefined,
@@ -21,7 +21,7 @@ const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
     },
     resolve: buildResolve(options),
     plugins: buildPlugins(options),
-  }
-}
+  };
+};
 
 export default buildWebpackConfig;
