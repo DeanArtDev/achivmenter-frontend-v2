@@ -10,9 +10,28 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "types": ["node"],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "*": ["./src/*"]
+      "@app/*": ["src/app/*"],
+      "@app/": ["src/app/index"],
+
+      "@processes": ["src/processes/index"],
+      "@processes/*": ["src/processes/*"],
+
+      "@pages": ["src/pages/index"],
+      "@pages/*": ["src/pages/*"],
+
+      "@features": ["src/features/index"],
+      "@features/*": ["src/features/*"],
+
+      "@widgets/*": ["src/widgets/*"],
+      "@widgets": ["src/widgets/index"],
+
+      "@entities": ["src/entities/index"],
+      "@entities/*": ["src/entities/*"],
+
+      "@shared": ["src/shared/index"],
+      "@shared/*": ["src/shared/*"]
     },
     "strict": true,
     "strictNullChecks": false,

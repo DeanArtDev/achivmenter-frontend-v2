@@ -16,6 +16,13 @@ module.exports = ({ mode, port }: WebpackEnv): webpack.Configuration => {
       output: path.resolve(__dirname, 'build'),
       static: path.resolve(__dirname, 'public'),
       htmlTemplate: path.resolve(__dirname, 'public/index.html'),
+      app: path.resolve(__dirname, 'src/app/'),
+      processes: path.resolve(__dirname, 'src/processes/'),
+      pages: path.resolve(__dirname, 'src/pages/'),
+      features: path.resolve(__dirname, 'src/features/'),
+      widgets: path.resolve(__dirname, 'src/widgets/'),
+      entities: path.resolve(__dirname, 'src/entities/'),
+      shared: path.resolve(__dirname, 'src/shared/'),
     },
   };
 

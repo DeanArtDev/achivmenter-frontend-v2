@@ -9,6 +9,13 @@ export type AppPaths = {
   entry: string;
   output: string;
   static: string;
+  app: string;
+  widgets: string;
+  entities: string;
+  features: string;
+  pages: string;
+  processes: string;
+  shared: string;
 };
 
 export type WebpackBuildOptions = {
