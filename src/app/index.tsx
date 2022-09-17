@@ -1,4 +1,5 @@
 import React from 'react';
+import stl from "./styles.module.scss";
 import './style.scss';
 
 type Props = {
@@ -14,7 +15,7 @@ function App({ className }: Props) {
   pages();
   entities();
   features();
-  return <div className={cls.join(' ')}>Hello World</div>;
+  return <div className={stl.header}>Hello World</div>;
 }
 
 import { StrictMode } from 'react';
