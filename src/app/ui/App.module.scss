@@ -1,0 +1,9 @@
+.app {
+  background-color: deeppink;
+}
+
+.app-hover {
+  &:hover {
+    background-color: yellowgreen;
+  }
+}
