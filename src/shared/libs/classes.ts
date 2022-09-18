@@ -1,21 +1,20 @@
 type ComputedClasses = Record<string, boolean>;
 
-function classes(classes: string): string;
+function classes(classes: string[]): string;
 function classes(classes: ComputedClasses): string;
-function classes(classes: string, computedClasses?: ComputedClasses): string;
 function classes(classes: string[], computedClasses?: ComputedClasses): string;
-function classes(classes: string | string[] | ComputedClasses, computedClasses?: ComputedClasses): string {
+function classes(classes: string[] | ComputedClasses, computedClasses?: ComputedClasses): string {
   const cls: string[] = [];
+  const isFirstArgArray = Array.isArray(classes);
 
-  Array.isArray(classes) && cls.push(...classes);
-  typeof classes === "string" && cls.push(classes);
-  if (computedClasses || typeof classes === "object") {
+  isFirstArgArray && cls.push(...classes.filter(Boolean));
+  if (computedClasses) {
     Object.entries(computedClasses ?? classes).forEach(([key, value]) => {
       if (value) cls.push(key);
     });
   }
 
-  return cls.join(" ");
+  return cls.join(' ');
 }
 
-export { classes };
+export { classes};
