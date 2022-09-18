@@ -17,4 +17,4 @@ function classes(classes: string[] | ComputedClasses, computedClasses?: Computed
   return cls.join(' ');
 }
 
-export { classes};
+export { classes };
