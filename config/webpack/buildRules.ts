@@ -20,6 +20,7 @@ const buildLoaders = ({ isDev }: WebpackBuildOptions): RuleSetRule[] => {
           modules: {
             auto: (resourcePath: string) => resourcePath.includes('.module.'),
             localIdentName: '[local]--[hash:base64:3]',
+            exportLocalsConvention: "camelCase",
           },
         },
       },

@@ -1,12 +1,8 @@
-import { classes as cn } from '@shared/libs';
-import style from './App.module.scss';
+import { FC } from 'react';
+import '../global-style';
 
-type AppProps = {
-  className?: string;
-};
-
-const App = ({ className }: AppProps) => {
-  return <div className={cn([style.app, style['app-hover'], className])}>Hello World</div>;
+const App: FC = () => {
+  return <div></div>;
 };
 
 export default App;
