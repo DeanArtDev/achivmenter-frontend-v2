@@ -4,7 +4,8 @@ import { WebpackBuildOptions } from './types';
 const buildDevServer = ({ paths, port }: WebpackBuildOptions): DevServerConfiguration => {
   return {
     port: port,
-    open: true,
+    open: false,
+    hot: true,
     client: {
       overlay: { errors: true, warnings: false },
       progress: true,

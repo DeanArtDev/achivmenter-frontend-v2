@@ -11,6 +11,7 @@
     "esModuleInterop": true,
     "types": ["node"],
     "baseUrl": "./",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
       "@app/*": ["src/app/*"],
       "@app/": ["src/app/index"],
@@ -48,6 +49,7 @@
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["./node_modules", "./build", "src/**/*.test.ts", "src/**/*.test.tsx"],
+  "sourceMap": true,
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

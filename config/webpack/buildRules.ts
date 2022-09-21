@@ -1,12 +1,26 @@
 import { WebpackBuildOptions } from './types';
 import { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 
-const buildLoaders = ({ isDev }: WebpackBuildOptions): RuleSetRule[] => {
+const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
+    include: paths.src,
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          configFile: isDev ? 'tsconfig.dev.json' : 'tsconfig.json',
+          transpileOnly: isDev,
+          ...(isDev && {
+            getCustomTransformers: () => ({
+              before: [ReactRefreshTypeScript()],
+            }),
+          }),
+        },
+      },
+    ],
   };
 
   const scssLoader: RuleSetRule = {
@@ -20,7 +34,7 @@ const buildLoaders = ({ isDev }: WebpackBuildOptions): RuleSetRule[] => {
           modules: {
             auto: (resourcePath: string) => resourcePath.includes('.module.'),
             localIdentName: '[local]--[hash:base64:3]',
-            exportLocalsConvention: "camelCase",
+            exportLocalsConvention: 'camelCase',
           },
         },
       },
