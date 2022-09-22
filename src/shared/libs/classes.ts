@@ -1,9 +1,9 @@
 type ComputedClasses = Record<string, boolean>;
 
-function classes(classes: string[]): string;
-function classes(classes: ComputedClasses): string;
-function classes(classes: string[], computedClasses?: ComputedClasses): string;
-function classes(classes: string[] | ComputedClasses, computedClasses?: ComputedClasses): string {
+export function classes(classes: string[]): string;
+export function classes(classes: ComputedClasses): string;
+export function classes(classes: string[], computedClasses?: ComputedClasses): string;
+export function classes(classes: string[] | ComputedClasses, computedClasses?: ComputedClasses): string {
   const cls: string[] = [];
   Array.isArray(classes) && cls.push(...classes.filter(Boolean));
   if (computedClasses) {
@@ -13,5 +13,3 @@ function classes(classes: string[] | ComputedClasses, computedClasses?: Computed
   }
   return cls.join(' ');
 }
-
-export { classes, };

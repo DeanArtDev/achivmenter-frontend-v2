@@ -35,7 +35,7 @@
         "arrays": "never",
         "objects": "never",
         "imports": "never",
-        "exports": "always",
+        "exports": "never",
         "functions": "never"
       }
     ],
@@ -43,7 +43,8 @@
       2,
       { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
     ],
-    "no-redeclare": ["warn", { "builtinGlobals": true }],
+    "no-redeclare": "off",
+    "@typescript-eslint/no-redeclare": ["warn", { "ignoreDeclarationMerge": true }],
     "arrow-body-style": "off",
     "object-shorthand": "off",
     "import/no-unresolved": "off",
@@ -52,8 +53,10 @@
     "react/react-in-jsx-scope": "off",
     "import/no-import-module-exports": "off",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "warn",
-    "@typescript-eslint/adjacent-overload-signatures": "error"
+    "@typescript-eslint/no-shadow": ["off", { "ignoreFunctionTypeParameterNameValueShadow": true }],
+    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "max-len": ["error", { "code": 120 }],
+    "@typescript-eslint/ban-types": ["warn", { "extendDefaults": true }]
   },
   "globals": {
     "TEST_VAR": true
