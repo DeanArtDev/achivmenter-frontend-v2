@@ -14,8 +14,8 @@ const buildResolve = ({ paths }: WebpackBuildOptions): ResolveOptions => {
       '@widgets': paths.widgets,
       '@features': paths.features,
       '@entities': paths.entities,
-      '@shared': paths.shared,
-    },
+      '@shared': paths.shared
+    }
   };
 };
 

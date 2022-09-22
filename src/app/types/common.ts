@@ -1,1 +1,1 @@
-declare var TEST_VAR: string;
+declare let TEST_VAR: string;

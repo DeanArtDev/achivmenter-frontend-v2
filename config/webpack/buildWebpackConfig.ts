@@ -1,5 +1,5 @@
-import { WebpackBuildOptions } from './types';
 import { Configuration } from 'webpack';
+import { WebpackBuildOptions } from './types';
 import buildDevServer from './buildDevServer';
 import buildRules from './buildRules';
 import buildResolve from './buildResolve';
@@ -12,15 +12,15 @@ const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
     output: {
       path: options.paths.output,
       filename: '[name].[contenthash].bundle.js',
-      clean: true,
+      clean: true
     },
     devServer: options.isDev ? buildDevServer(options) : undefined,
     devtool: options.isDev ? 'inline-source-map' : undefined,
     module: {
-      rules: buildRules(options),
+      rules: buildRules(options)
     },
     resolve: buildResolve(options),
-    plugins: buildPlugins(options),
+    plugins: buildPlugins(options)
   };
 };
 

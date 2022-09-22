@@ -10,15 +10,15 @@ const buildPlugins = ({ paths, isDev }: WebpackBuildOptions): Configuration['plu
     new HTMLWebpackPlugin({ template: paths.htmlTemplate }),
     new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
-      TEST_VAR: JSON.stringify('TEST_VAR'),
-    }),
+      TEST_VAR: JSON.stringify('TEST_VAR')
+    })
   ];
 
   if (!isDev) {
     pluginsList.push(
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[id].[name].[contenthash:8].css',
+        chunkFilename: 'css/[id].[name].[contenthash:8].css'
       })
     );
   }

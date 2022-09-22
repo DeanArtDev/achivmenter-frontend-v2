@@ -1,7 +1,7 @@
-import { WebpackBuildOptions } from './types';
 import { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
+import { WebpackBuildOptions } from './types';
 
 const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
   const typescriptLoader: RuleSetRule = {
@@ -15,12 +15,12 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
           transpileOnly: isDev,
           ...(isDev && {
             getCustomTransformers: () => ({
-              before: [ReactRefreshTypeScript()],
-            }),
-          }),
-        },
-      },
-    ],
+              before: [ReactRefreshTypeScript()]
+            })
+          })
+        }
+      }
+    ]
   };
 
   const scssLoader: RuleSetRule = {
@@ -34,12 +34,12 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
           modules: {
             auto: (resourcePath: string) => resourcePath.includes('.module.'),
             localIdentName: '[local]--[hash:base64:3]',
-            exportLocalsConvention: 'camelCase',
-          },
-        },
+            exportLocalsConvention: 'camelCase'
+          }
+        }
       },
-      { loader: 'sass-loader', options: { sourceMap: isDev } },
-    ],
+      { loader: 'sass-loader', options: { sourceMap: isDev } }
+    ]
   };
 
   return [typescriptLoader, scssLoader];

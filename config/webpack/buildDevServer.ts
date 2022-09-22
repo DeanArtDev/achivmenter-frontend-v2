@@ -8,10 +8,10 @@ const buildDevServer = ({ paths, port }: WebpackBuildOptions): DevServerConfigur
     hot: true,
     client: {
       overlay: { errors: true, warnings: false },
-      progress: true,
+      progress: true
     },
     static: { directory: paths.static },
-    historyApiFallback: true,
+    historyApiFallback: true
   };
 };
 
