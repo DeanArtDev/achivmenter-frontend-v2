@@ -4,7 +4,9 @@ export type WebpackEnv = {
   port: number;
 };
 export type AppPaths = {
+  root: string,
   src: string;
+  configs: string;
   htmlTemplate: string;
   entry: string;
   output: string;

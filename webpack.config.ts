@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import { WebpackBuildOptions, WebpackEnv } from './config/webpack/types';
-import buildWebpackConfig from './config/webpack/buildWebpackConfig';
+import { WebpackBuildOptions, WebpackEnv } from './configs/webpack/types';
+import buildWebpackConfig from './configs/webpack/buildWebpackConfig';
 
 const DEFAULT_PORT = 3000;
 
@@ -11,7 +11,9 @@ module.exports = ({ mode, port }: WebpackEnv): webpack.Configuration => {
     isDev: (mode ?? 'development') === 'development',
     port: port || DEFAULT_PORT,
     paths: {
+      root: path.resolve(__dirname),
       src: path.resolve(__dirname, 'src'),
+      configs: path.resolve(__dirname, 'src/configs'),
       entry: path.resolve(__dirname, 'src/app/index.tsx'),
       output: path.resolve(__dirname, 'build'),
       static: path.resolve(__dirname, 'public'),

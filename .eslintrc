@@ -4,6 +4,7 @@
     "es2021": true,
     "jest": true
   },
+  "ignorePatterns": ["build/*"],
   "extends": [
     "plugin:react/recommended",
     "airbnb",
@@ -56,7 +57,8 @@
     "@typescript-eslint/no-shadow": ["off", { "ignoreFunctionTypeParameterNameValueShadow": true }],
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "max-len": ["error", { "code": 120 }],
-    "@typescript-eslint/ban-types": ["warn", { "extendDefaults": true }]
+    "@typescript-eslint/ban-types": ["warn", { "extendDefaults": true }],
+    "no-restricted-exports": "off"
   },
   "globals": {
     "TEST_VAR": true

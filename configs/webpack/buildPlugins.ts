@@ -2,6 +2,7 @@ import webpack, { Configuration } from 'webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { WebpackBuildOptions } from './types';
 
@@ -22,9 +23,14 @@ const buildPlugins = ({ paths, isDev }: WebpackBuildOptions): Configuration['plu
       })
     );
   }
-
   if (isDev) {
     pluginsList.push(new ReactRefreshWebpackPlugin());
+    pluginsList.push(new ESLintPlugin({
+      context: paths.root,
+      files: ['src/**/*.ts', 'src/**/*.tsx', 'config/**/*.ts'],
+      extensions: ['ts', 'tsx', 'js'],
+      threads: 1
+    }));
   }
 
   return pluginsList;
