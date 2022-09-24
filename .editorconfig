@@ -6,6 +6,7 @@ end_of_line = lf
 indent_size = 2
 indent_style = space
 insert_final_newline = true
+ij_typescript_jsx_attribute_value = braces
 trim_trailing_whitespace = true
 
 [*.md]
