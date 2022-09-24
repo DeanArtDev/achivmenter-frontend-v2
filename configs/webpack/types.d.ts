@@ -3,10 +3,13 @@ export type WebpackEnv = {
   mode: WebpackMode;
   port: number;
 };
+export type ConfigPaths = {
+  ts: string
+};
 export type AppPaths = {
   root: string,
   src: string;
-  configs: string;
+  configs: ConfigPaths;
   htmlTemplate: string;
   entry: string;
   output: string;

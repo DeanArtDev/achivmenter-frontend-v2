@@ -11,7 +11,7 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
       {
         loader: 'ts-loader',
         options: {
-          configFile: isDev ? 'tsconfig.dev.json' : 'tsconfig.json',
+          configFile: isDev ? `${paths.configs.ts}/tsconfig.dev.json` : `${paths.configs.ts}/tsconfig.json`,
           transpileOnly: isDev,
           ...(isDev && {
             getCustomTransformers: () => ({

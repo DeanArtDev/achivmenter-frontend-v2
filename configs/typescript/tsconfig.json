@@ -47,8 +47,8 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["./node_modules", "./build", "src/**/*.test.ts", "src/**/*.test.tsx"],
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
+  "exclude": ["../../node_modules", "../../build", "../../src/**/*.test.ts", "../../src/**/*.test.tsx"],
   "sourceMap": true,
   "ts-node": {
     "compilerOptions": {

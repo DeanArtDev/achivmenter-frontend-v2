@@ -13,7 +13,9 @@ module.exports = ({ mode, port }: WebpackEnv): webpack.Configuration => {
     paths: {
       root: path.resolve(__dirname),
       src: path.resolve(__dirname, 'src'),
-      configs: path.resolve(__dirname, 'src/configs'),
+      configs: {
+        ts: path.resolve(__dirname, 'configs/typescript')
+      },
       entry: path.resolve(__dirname, 'src/app/index.tsx'),
       output: path.resolve(__dirname, 'build'),
       static: path.resolve(__dirname, 'public'),
