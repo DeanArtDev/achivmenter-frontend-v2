@@ -4,7 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "ignorePatterns": ["build/*"],
+  "ignorePatterns": ["build/*", "node_modules/*"],
   "extends": [
     "plugin:react/recommended",
     "airbnb",
