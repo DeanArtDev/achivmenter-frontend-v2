@@ -41,15 +41,30 @@
       "error",
       {
         "warnOnUnassignedImports": true,
-        "groups": ["builtin", "type", "external", "internal", "parent", "sibling", "index"],
+        "groups": [
+          "builtin",
+          "type",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
         "pathGroupsExcludedImportTypes": ["react"]
       }
     ],
     "jsx-quotes": ["error", "prefer-double"],
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
     ],
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
@@ -65,10 +80,16 @@
     ],
     "react/function-component-definition": [
       2,
-      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
     ],
     "no-redeclare": "off",
-    "@typescript-eslint/no-redeclare": ["warn", { "ignoreDeclarationMerge": true }],
+    "@typescript-eslint/no-redeclare": [
+      "warn",
+      { "ignoreDeclarationMerge": true }
+    ],
     "arrow-body-style": "off",
     "object-shorthand": "off",
     "import/no-unresolved": "off",
@@ -77,9 +98,12 @@
     "react/react-in-jsx-scope": "off",
     "import/no-import-module-exports": "off",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["off", { "ignoreFunctionTypeParameterNameValueShadow": true }],
+    "@typescript-eslint/no-shadow": [
+      "off",
+      { "ignoreFunctionTypeParameterNameValueShadow": true }
+    ],
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", { "code": 120, "ignoreComments": true }],
     "@typescript-eslint/ban-types": ["warn", { "extendDefaults": true }],
     "no-restricted-exports": "off"
   },
