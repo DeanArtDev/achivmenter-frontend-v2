@@ -5,11 +5,11 @@
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
-    "allowJs": true,
+    "allowJs": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node"],
+    "types": ["node", "jest"],
     "baseUrl": "./",
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
@@ -47,8 +47,13 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "build", "src/**/*.test.ts", "src/**/*.test.tsx"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/__tests__/*.test.ts",
+    "src/**/__tests__/*.test.tsx"
+  ],
+  "exclude": ["node_modules", "build", "coverage", "jest-cache"],
   "sourceMap": true,
   "ts-node": {
     "compilerOptions": {
