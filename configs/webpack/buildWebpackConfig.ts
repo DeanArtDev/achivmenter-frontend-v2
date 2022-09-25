@@ -12,6 +12,7 @@ const buildWebpackConfig = (options: WebpackBuildOptions): Configuration => {
     output: {
       path: options.paths.output,
       filename: '[name].[contenthash].bundle.js',
+      assetModuleFilename: 'images/[hash].[ext]',
       clean: true
     },
     devServer: options.isDev ? buildDevServer(options) : undefined,

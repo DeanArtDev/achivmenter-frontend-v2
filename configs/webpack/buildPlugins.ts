@@ -9,9 +9,7 @@ import { WebpackBuildOptions } from './types';
 const buildPlugins = ({ paths, isDev }: WebpackBuildOptions): Configuration['plugins'] => {
   const pluginsList: Configuration['plugins'] = [
     new HTMLWebpackPlugin({ template: paths.htmlTemplate }),
-    new ForkTsCheckerWebpackPlugin({
-      typescript: { configFile: `${paths.configs.ts}/tsconfig.json` }
-    }),
+    new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
       TEST_VAR: JSON.stringify('TEST_VAR')
     })

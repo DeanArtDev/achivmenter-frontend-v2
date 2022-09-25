@@ -11,7 +11,7 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
       {
         loader: 'ts-loader',
         options: {
-          configFile: isDev ? `${paths.configs.ts}/tsconfig.dev.json` : `${paths.configs.ts}/tsconfig.json`,
+          configFile: isDev ? `${paths.configs.ts}/tsconfig.dev.json` : `${paths.root}/tsconfig.json`,
           transpileOnly: isDev,
           ...(isDev && {
             getCustomTransformers: () => ({
@@ -21,6 +21,17 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
         }
       }
     ]
+  };
+
+  const svgLoader: RuleSetRule = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack']
+  };
+
+  const fileLoader: RuleSetRule = {
+    test: /\.(png|jpe?g|gif|webp|woff2|woff|ttf|eot)$/i,
+    type: 'asset/resource'
   };
 
   const scssLoader: RuleSetRule = {
@@ -42,7 +53,7 @@ const buildLoaders = ({ isDev, paths }: WebpackBuildOptions): RuleSetRule[] => {
     ]
   };
 
-  return [typescriptLoader, scssLoader];
+  return [scssLoader, svgLoader, fileLoader, typescriptLoader];
 };
 
 export default buildLoaders;
